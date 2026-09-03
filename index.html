@@ -1,591 +1,1146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IT Portfolio &amp; Full-Stack Showcase | Projects, Skills &amp; Languages</title>
-  <meta name="description" content="Full-Stack Developer & IT Portfolio showcasing live web applications (GravaStar, Odemine Rental Car), Data Structures & Algorithms, React, Python, Django, PostgreSQL, MySQL, C++, and active learning in C#, PHP/Laravel, and SQL Server.">
-  <meta name="keywords" content="IT Portfolio, Full Stack Developer, React.js, Python, Django, PostgreSQL, MySQL, C++, DSA, C#, PHP, Laravel, SQL Server, Vercel Projects">
-  <meta name="author" content="Full-Stack IT Developer">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      IT Portfolio &amp; Full-Stack Showcase | Projects, Skills &amp; Languages
+    </title>
+    <meta
+      name="description"
+      content="Full-Stack Developer & IT Portfolio showcasing live web applications (GravaStar, Odemine Rental Car), Data Structures & Algorithms, React, Python, Django, PostgreSQL, MySQL, C++, and active learning in C#, PHP/Laravel, and SQL Server."
+    />
+    <meta
+      name="keywords"
+      content="IT Portfolio, Full Stack Developer, React.js, Python, Django, PostgreSQL, MySQL, C++, DSA, C#, PHP, Laravel, SQL Server, Vercel Projects"
+    />
+    <meta name="author" content="Full-Stack IT Developer" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-  <!-- Google Fonts: Outfit, Inter & JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Outfit, Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Font Awesome 6.5 CDN Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome 6.5 CDN Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/animations.css">
-</head>
-<body>
-
-  <!-- Ambient Glowing Mesh Background -->
-  <div class="bg-mesh" aria-hidden="true">
-    <div class="mesh-orb orb-1"></div>
-    <div class="mesh-orb orb-2"></div>
-    <div class="mesh-orb orb-3"></div>
-  </div>
-
-  <!-- Navigation Bar -->
-  <header class="navbar" id="navbar">
-    <div class="container">
-      <a href="#home" class="nav-brand">
-        <span class="brand-logo-icon">&lt;/&gt;</span>
-        <span>Dev<span class="gradient-text">Portfolio</span></span>
-      </a>
-
-      <nav>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills &amp; Languages</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#timeline" class="nav-link">Journey</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="btn btn-sm btn-primary" onclick="openAddProjectModal()" title="Add your project to portfolio">
-          <i class="fa-solid fa-plus"></i> <span class="hide-mobile">Add Project</span>
-        </button>
-
-        <!-- Light/Dark Mode Switcher -->
-        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle Theme" title="Switch Theme">
-          <i id="theme-icon" class="fa-solid fa-sun"></i>
-        </button>
-
-        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Navigation Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+  </head>
+  <body>
+    <!-- Ambient Glowing Mesh Background -->
+    <div class="bg-mesh" aria-hidden="true">
+      <div class="mesh-orb orb-1"></div>
+      <div class="mesh-orb orb-2"></div>
+      <div class="mesh-orb orb-3"></div>
     </div>
-  </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section section" id="home">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge reveal">
-            <span class="pulse-dot"></span>
-            <span>Available for Full-Stack &amp; Software Roles</span>
-          </div>
-
-          <h1 class="hero-title reveal reveal-delay-1">
-            Building End-to-End Solutions as a <br>
-            <span class="typewriter-text" id="typewriter">Full-Stack Developer</span>
-          </h1>
-
-          <p class="hero-description reveal reveal-delay-2">
-            Full-stack engineer with hands-on experience developing and hosting complete web platforms from frontend to backend, APIs, database modeling (PostgreSQL, MySQL, SQL Server), and solid foundations in Data Structures &amp; Algorithms (DSA) and C++.
-          </p>
-
-          <div class="hero-cta reveal reveal-delay-3">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fa-solid fa-rocket"></i> View Live Projects
-            </a>
-            <button class="btn btn-secondary" onclick="openAddProjectModal()">
-              <i class="fa-solid fa-folder-plus"></i> Add New Project
-            </button>
-            <a href="#contact" class="btn btn-outline">
-              <i class="fa-regular fa-paper-plane"></i> Contact Me
-            </a>
-          </div>
-
-          <div class="hero-stats-row reveal reveal-delay-3">
-            <div class="stat-item">
-              <h4 class="counter-val" data-target="2" data-suffix="+ Live">0</h4>
-              <p>Deployed Platforms</p>
-            </div>
-            <div class="stat-item">
-              <h4 class="counter-val" data-target="10" data-suffix="+">0</h4>
-              <p>Tech &amp; Languages</p>
-            </div>
-            <div class="stat-item">
-              <h4 class="counter-val" data-target="100" data-suffix="%">0</h4>
-              <p>Full-Stack Ownership</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Hero Interactive Code Window & Floating Tech Badges -->
-        <div class="hero-visual reveal reveal-delay-2">
-          <div class="code-card-window">
-            <div class="window-header">
-              <div class="window-dots">
-                <span class="window-dot dot-red"></span>
-                <span class="window-dot dot-yellow"></span>
-                <span class="window-dot dot-green"></span>
-              </div>
-              <span class="window-title">developer_profile.ts</span>
-              <span style="font-size: 0.75rem; color: var(--accent-secondary);"><i class="fa-solid fa-code-commit"></i> main</span>
-            </div>
-            <div class="window-body">
-              <span class="code-keyword">const</span> <span class="code-var">itDeveloper</span> = {<br>
-              &nbsp;&nbsp;<span class="code-prop">role</span>: <span class="code-str">"Full-Stack Web &amp; Software Developer"</span>,<br>
-              &nbsp;&nbsp;<span class="code-prop">liveProjects</span>: [<span class="code-str">"GravaStar E-Commerce"</span>, <span class="code-str">"Odemine Car Rental"</span>],<br>
-              &nbsp;&nbsp;<span class="code-prop">frontend</span>: [<span class="code-str">"React.js"</span>, <span class="code-str">"JavaScript"</span>, <span class="code-str">"HTML5 &amp; CSS3"</span>],<br>
-              &nbsp;&nbsp;<span class="code-prop">backend</span>: [<span class="code-str">"Python"</span>, <span class="code-str">"Django"</span>, <span class="code-str">"REST APIs"</span>],<br>
-              &nbsp;&nbsp;<span class="code-prop">coreCS</span>: [<span class="code-str">"DSA (Algorithms)"</span>, <span class="code-str">"C++"</span>],<br>
-              &nbsp;&nbsp;<span class="code-prop">databases</span>: [<span class="code-str">"PostgreSQL"</span>, <span class="code-str">"MySQL"</span>, <span class="code-str">"MS Access"</span>],<br>
-              &nbsp;&nbsp;<span class="code-prop">activelyLearning</span>: [<span class="code-str">"C# (.NET)"</span>, <span class="code-str">"PHP &amp; Laravel"</span>, <span class="code-str">"SQL Server (SSMS)"</span>],<br>
-              &nbsp;&nbsp;<span class="code-prop">openForOpportunities</span>: <span class="code-keyword">true</span><br>
-              };<br><br>
-              <span class="code-comment">// Full-stack from frontend to backend &amp; hosting</span><br>
-              <span class="code-keyword">export default</span> <span class="code-var">itDeveloper</span>;
-            </div>
-          </div>
-
-          <!-- Floating Badges -->
-          <div class="floating-tech-pill pill-1">
-            <i class="fa-brands fa-react" style="color: #61dafb; font-size: 1.1rem;"></i>
-            <span>React.js &amp; Frontend</span>
-          </div>
-          <div class="floating-tech-pill pill-2">
-            <i class="fa-brands fa-python" style="color: #3776ab; font-size: 1.1rem;"></i>
-            <span>Python &amp; Django</span>
-          </div>
-          <div class="floating-tech-pill pill-3">
-            <i class="fa-solid fa-database" style="color: #336791; font-size: 1.1rem;"></i>
-            <span>PostgreSQL &amp; MySQL</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about">
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag"><i class="fa-solid fa-user-gear"></i> About Me</span>
-          <h2 class="section-title">End-to-End <span class="gradient-text">Full-Stack</span> Engineering</h2>
-          <p class="section-subtitle">Bridging user interfaces, REST APIs, database schemas, and live cloud deployments with a continuous learning mindset.</p>
-        </div>
+        <a href="#home" class="nav-brand">
+          <span class="brand-logo-icon">&lt;/&gt;</span>
+          <span>Dev<span class="gradient-text">Portfolio</span></span>
+        </a>
 
-        <div class="about-grid">
-          <div class="about-card-main reveal">
-            <h3>Full-Stack Builder with Strong Problem-Solving Foundations</h3>
-            <p>
-              I build complete, production-ready web applications from start to finish. From architecting responsive frontends in <strong>React.js, JavaScript, HTML5 &amp; CSS3</strong>, to building backend APIs in <strong>Python &amp; Django</strong>, designing relational databases in <strong>PostgreSQL, MySQL, and MS Access</strong>, and managing deployments on <strong>Vercel</strong>.
-            </p>
-            <p>
-              My engineering approach is grounded in solid <strong>Data Structures &amp; Algorithms (DSA)</strong> and <strong>C++</strong>, ensuring performant, clean, and maintainable code. I am continuously expanding my capabilities into <strong>C# (.NET), PHP, Laravel, and Advanced SQL Server Management Studio (SSMS)</strong>.
-            </p>
-            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="#projects" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i> View Live Projects</a>
-              <a href="#contact" class="btn btn-secondary btn-sm"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
-            </div>
-          </div>
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li>
+              <a href="#skills" class="nav-link">Skills &amp; Languages</a>
+            </li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#timeline" class="nav-link">Journey</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
 
-          <div class="highlights-grid">
-            <div class="highlight-card reveal reveal-delay-1">
-              <div class="highlight-icon"><i class="fa-solid fa-layer-group"></i></div>
-              <h4>Full-Stack &amp; Hosting</h4>
-              <p>End-to-end development covering UI, API communication, database connectivity, and live Vercel deployments.</p>
-            </div>
-            <div class="highlight-card reveal reveal-delay-2">
-              <div class="highlight-icon"><i class="fa-solid fa-database"></i></div>
-              <h4>Database Management (DBMS)</h4>
-              <p>Schema modeling, relationships, and queries across PostgreSQL, MySQL, MS Access, and SQL Server.</p>
-            </div>
-            <div class="highlight-card reveal reveal-delay-1">
-              <div class="highlight-icon"><i class="fa-solid fa-brain"></i></div>
-              <h4>DSA &amp; C++ Foundation</h4>
-              <p>Strong algorithmic problem-solving with data structures, asymptotic complexity, and Object-Oriented C++.</p>
-            </div>
-            <div class="highlight-card reveal reveal-delay-2">
-              <div class="highlight-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-              <h4>Active Growth</h4>
-              <p>Expanding backend mastery with C# (.NET), PHP, Laravel MVC architecture, and SSMS in VS Code.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="nav-actions">
+          <button
+            class="btn btn-sm btn-primary"
+            onclick="openAddProjectModal()"
+            title="Add your project to portfolio"
+          >
+            <i class="fa-solid fa-plus"></i>
+            <span class="hide-mobile">Add Project</span>
+          </button>
 
-    <!-- Skills & Languages Section -->
-    <section class="section" id="skills" style="background: var(--bg-glass-card);">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag"><i class="fa-solid fa-code-branch"></i> Technical Arsenal</span>
-          <h2 class="section-title">Languages &amp; <span class="gradient-text">Skills Learned</span></h2>
-          <p class="section-subtitle">A clear breakdown of what I have learned, the databases and frameworks I use, and the technologies I am currently mastering.</p>
-        </div>
+          <!-- Light/Dark Mode Switcher -->
+          <button
+            id="theme-toggle-btn"
+            class="theme-toggle-btn"
+            aria-label="Toggle Theme"
+            title="Switch Theme"
+          >
+            <i id="theme-icon" class="fa-solid fa-sun"></i>
+          </button>
 
-        <!-- Filter Category Tabs -->
-        <div class="skills-filter-nav reveal">
-          <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Skills</button>
-          <button class="filter-btn" data-filter="languages"><i class="fa-solid fa-code"></i> Languages</button>
-          <button class="filter-btn" data-filter="frameworks"><i class="fa-solid fa-cubes"></i> Frameworks &amp; Web</button>
-          <button class="filter-btn" data-filter="databases"><i class="fa-solid fa-database"></i> Databases &amp; DBMS</button>
-          <button class="filter-btn" data-filter="tools"><i class="fa-solid fa-wrench"></i> Core CS &amp; Tools</button>
-        </div>
-
-        <!-- Dynamic Skills Grid -->
-        <div class="skills-grid" id="skills-grid">
-          <!-- Populated by js/skills.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag"><i class="fa-solid fa-folder-open"></i> Portfolio Work</span>
-          <h2 class="section-title">Featured <span class="gradient-text">Projects &amp; Solutions</span></h2>
-          <p class="section-subtitle">Real-world full-stack web platforms and systems. Click "Live Demo" to visit the deployed sites or add new projects directly!</p>
-        </div>
-
-        <!-- Filter & Search Controls -->
-        <div class="projects-controls reveal">
-          <!-- Category Filter Pills -->
-          <div class="projects-filter-nav skills-filter-nav" style="margin-bottom: 0;">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-            <button class="filter-btn" data-filter="backend">Backend &amp; Databases</button>
-          </div>
-
-          <!-- Search Input -->
-          <div class="project-search-box">
-            <i class="fa-solid fa-magnifying-glass project-search-icon"></i>
-            <input type="text" id="project-search-input" placeholder="Search by title, tech (e.g. React, Python, PostgreSQL)...">
-          </div>
-
-          <!-- Project Management Actions -->
-          <div class="project-actions-bar">
-            <button class="btn btn-primary btn-sm" onclick="openAddProjectModal()" title="Add your project">
-              <i class="fa-solid fa-plus"></i> Add Project
-            </button>
-            <button class="btn btn-secondary btn-sm" onclick="exportProjectsJSON()" title="Export projects backup as JSON">
-              <i class="fa-solid fa-download"></i> Export JSON
-            </button>
-            <label class="btn btn-secondary btn-sm" style="cursor: pointer;" title="Import projects from JSON file">
-              <i class="fa-solid fa-upload"></i> Import
-              <input type="file" id="import-json-input" accept=".json" style="display: none;" onchange="importProjectsJSON(event)">
-            </label>
-            <button class="btn btn-outline btn-sm" onclick="resetProjectsToDefault()" title="Reset to sample projects">
-              <i class="fa-solid fa-rotate-left"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Projects Grid Container -->
-        <div class="projects-grid" id="projects-grid">
-          <!-- Rendered via js/projects.js -->
-        </div>
-
-        <!-- Empty State Message -->
-        <div class="projects-empty-state" id="projects-empty-state" style="display: none;">
-          <div class="empty-icon"><i class="fa-solid fa-folder-minus"></i></div>
-          <h3>No matching projects found</h3>
-          <p style="margin-bottom: 1.5rem;">Try adjusting your search query or category filters, or click below to add a new project.</p>
-          <button class="btn btn-primary" onclick="openAddProjectModal()">
-            <i class="fa-solid fa-plus"></i> Add New Project
+          <button
+            class="mobile-menu-toggle"
+            id="mobile-menu-toggle"
+            aria-label="Open Navigation Menu"
+          >
+            <i class="fa-solid fa-bars"></i>
           </button>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- Learning & Experience Journey Timeline -->
-    <section class="section" id="timeline" style="background: var(--bg-glass-card);">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag"><i class="fa-solid fa-timeline"></i> Milestones</span>
-          <h2 class="section-title">My Learning &amp; <span class="gradient-text">Skills Journey</span></h2>
-          <p class="section-subtitle">How my technical skills have evolved from foundational computer science into full-stack deployments and advanced database engineering.</p>
-        </div>
-
-        <div class="timeline-container">
-          <!-- Timeline Item 1: Active Learning -->
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">Current / Active Learning</div>
-              <h3 class="timeline-title">C#, PHP, Laravel &amp; Advanced SQL Server</h3>
-              <div class="timeline-org"><i class="fa-solid fa-rocket"></i> Backend &amp; Advanced Database Engineering</div>
-              <p class="timeline-body">
-                Actively learning C# (.NET) object-oriented systems, PHP &amp; Laravel framework MVC development, and advanced database architecture with Microsoft SQL Server Management Studio (SSMS) in VS Code.
-              </p>
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section section" id="home">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge reveal">
+              <span class="pulse-dot"></span>
+              <span>Available for Full-Stack &amp; Software Roles</span>
             </div>
-          </div>
 
-          <!-- Timeline Item 2: Full-Stack & Deployments -->
-          <div class="timeline-item reveal reveal-delay-1">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">Full-Stack Development &amp; Hosting</div>
-              <h3 class="timeline-title">React.js, Python, Django &amp; Vercel Deployments</h3>
-              <div class="timeline-org"><i class="fa-solid fa-laptop-code"></i> Live Production Applications</div>
-              <p class="timeline-body">
-                Built and independently launched end-to-end full-stack web platforms: the <strong>GravaStar E-Commerce store</strong> and the <strong>Odemine Car Rental system</strong>. Implemented interactive frontend interfaces in React.js, backend APIs, relational databases (PostgreSQL &amp; MySQL), and cloud hosting on Vercel.
-              </p>
-            </div>
-          </div>
+            <h1 class="hero-title reveal reveal-delay-1">
+              Building End-to-End Solutions as a <br />
+              <span class="typewriter-text" id="typewriter"
+                >Full-Stack Developer</span
+              >
+            </h1>
 
-          <!-- Timeline Item 3: Databases & DBMS -->
-          <div class="timeline-item reveal reveal-delay-2">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">Database Architecture &amp; DBMS</div>
-              <h3 class="timeline-title">PostgreSQL, MySQL &amp; DBMS with MS Access</h3>
-              <div class="timeline-org"><i class="fa-solid fa-database"></i> Relational Data Systems</div>
-              <p class="timeline-body">
-                Mastered relational database schema design, normalization, foreign keys, complex queries, joins, and data management using PostgreSQL, MySQL, and Microsoft Access DBMS.
-              </p>
-            </div>
-          </div>
-
-          <!-- Timeline Item 4: CS Foundations -->
-          <div class="timeline-item reveal reveal-delay-3">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">Core Foundations</div>
-              <h3 class="timeline-title">Data Structures &amp; Algorithms (DSA) &amp; C++</h3>
-              <div class="timeline-org"><i class="fa-solid fa-code"></i> Computer Science &amp; Programming Fundamentals</div>
-              <p class="timeline-body">
-                Formed strong core foundations in computer programming, Object-Oriented C++, Python, Data Structures &amp; Algorithms (DSA), time/space complexity analysis, and modern web fundamentals (HTML5, CSS3, JavaScript).
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-tag"><i class="fa-solid fa-headset"></i> Get In Touch</span>
-          <h2 class="section-title">Let's Build Something <span class="gradient-text">Extraordinary</span></h2>
-          <p class="section-subtitle">Looking for a full-stack developer or have a project to collaborate on? Send me a message below!</p>
-        </div>
-
-        <div class="contact-grid">
-          <!-- Direct Contact Details -->
-          <div class="contact-info-card reveal">
-            <h3>Let's Connect</h3>
-            <p>
-              I am open to software development opportunities, freelance collaborations, and tech discussions. Feel free to reach out directly via email or check out my live deployments!
+            <p class="hero-description reveal reveal-delay-2">
+              Full-stack engineer with hands-on experience developing and
+              hosting complete web platforms from frontend to backend, APIs,
+              database modeling (PostgreSQL, MySQL, SQL Server), and solid
+              foundations in Data Structures &amp; Algorithms (DSA) and C++.
             </p>
 
-            <div class="contact-methods-list">
-              <div class="contact-method-item">
-                <div class="contact-method-icon"><i class="fa-solid fa-envelope"></i></div>
-                <div class="contact-method-details">
-                  <h4>Email</h4>
-                  <a href="mailto:Khengoudom99@gmail.com">Khengoudom99@gmail.com</a>
-                </div>
-              </div>
-
-              <div class="contact-method-item">
-                <div class="contact-method-icon"><i class="fa-solid fa-globe"></i></div>
-                <div class="contact-method-details">
-                  <h4>Live Deployments</h4>
-                  <a href="https://gravastar-frontend-nine.vercel.app/" target="_blank" rel="noopener noreferrer">GravaStar &amp; Odemine on Vercel</a>
-                </div>
-              </div>
-
-              <div class="contact-method-item">
-                <div class="contact-method-icon"><i class="fa-brands fa-github"></i></div>
-                <div class="contact-method-details">
-                  <h4>GitHub</h4>
-                  <a href="https://github.com/Dominant8899" target="_blank" rel="noopener noreferrer">github.com/Dominant8899</a>
-                </div>
-              </div>
-
-              <div class="contact-method-item">
-                <div class="contact-method-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-                <div class="contact-method-details">
-                  <h4>LinkedIn</h4>
-                  <a href="https://www.linkedin.com/in/kheng-oudom-ek-6b63ba433/" target="_blank" rel="noopener noreferrer">linkedin.com/in/kheng-oudom-ek</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Form -->
-          <div class="contact-form-card reveal reveal-delay-1">
-            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Send a Message</h3>
-            <form id="contact-form">
-              <div class="form-group">
-                <label for="contact-name">Your Full Name *</label>
-                <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required>
-              </div>
-
-              <div class="form-group">
-                <label for="contact-email">Your Email Address *</label>
-                <input type="email" id="contact-email" class="form-control" placeholder="john@example.com" required>
-              </div>
-
-              <div class="form-group">
-                <label for="contact-subject">Subject</label>
-                <input type="text" id="contact-subject" class="form-control" placeholder="Full-Stack Project / Opportunity">
-              </div>
-
-              <div class="form-group">
-                <label for="contact-message">Message *</label>
-                <textarea id="contact-message" class="form-control" placeholder="Tell me about your project, idea, or role..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
+            <div class="hero-cta reveal reveal-delay-3">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-rocket"></i> View Live Projects
+              </a>
+              <a
+                href="assets/Kheng-Oudom-Resume.pdf"
+                class="btn btn-secondary"
+                download
+              >
+                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+              </a>
+              <button class="btn btn-secondary" onclick="openAddProjectModal()">
+                <i class="fa-solid fa-folder-plus"></i> Add New Project
               </button>
-            </form>
+              <a href="#contact" class="btn btn-outline">
+                <i class="fa-regular fa-paper-plane"></i> Contact Me
+              </a>
+            </div>
+
+            <div class="hero-stats-row reveal reveal-delay-3">
+              <div class="stat-item">
+                <h4 class="counter-val" data-target="2" data-suffix="+ Live">
+                  0
+                </h4>
+                <p>Deployed Platforms</p>
+              </div>
+              <div class="stat-item">
+                <h4 class="counter-val" data-target="10" data-suffix="+">0</h4>
+                <p>Tech &amp; Languages</p>
+              </div>
+              <div class="stat-item">
+                <h4 class="counter-val" data-target="100" data-suffix="%">0</h4>
+                <p>Full-Stack Ownership</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Interactive Code Window & Floating Tech Badges -->
+          <div class="hero-visual reveal reveal-delay-2">
+            <div class="code-card-window">
+              <div class="window-header">
+                <div class="window-dots">
+                  <span class="window-dot dot-red"></span>
+                  <span class="window-dot dot-yellow"></span>
+                  <span class="window-dot dot-green"></span>
+                </div>
+                <span class="window-title">developer_profile.ts</span>
+                <span style="font-size: 0.75rem; color: var(--accent-secondary)"
+                  ><i class="fa-solid fa-code-commit"></i> main</span
+                >
+              </div>
+              <div class="window-body">
+                <span class="code-keyword">const</span>
+                <span class="code-var">itDeveloper</span> = {<br />
+                &nbsp;&nbsp;<span class="code-prop">role</span>:
+                <span class="code-str"
+                  >"Full-Stack Web &amp; Software Developer"</span
+                >,<br />
+                &nbsp;&nbsp;<span class="code-prop">liveProjects</span>: [<span
+                  class="code-str"
+                  >"GravaStar E-Commerce"</span
+                >, <span class="code-str">"Odemine Car Rental"</span>],<br />
+                &nbsp;&nbsp;<span class="code-prop">frontend</span>: [<span
+                  class="code-str"
+                  >"React.js"</span
+                >, <span class="code-str">"JavaScript"</span>,
+                <span class="code-str">"HTML5 &amp; CSS3"</span>],<br />
+                &nbsp;&nbsp;<span class="code-prop">backend</span>: [<span
+                  class="code-str"
+                  >"Python"</span
+                >, <span class="code-str">"Django"</span>,
+                <span class="code-str">"REST APIs"</span>],<br />
+                &nbsp;&nbsp;<span class="code-prop">coreCS</span>: [<span
+                  class="code-str"
+                  >"DSA (Algorithms)"</span
+                >, <span class="code-str">"C++"</span>],<br />
+                &nbsp;&nbsp;<span class="code-prop">databases</span>: [<span
+                  class="code-str"
+                  >"PostgreSQL"</span
+                >, <span class="code-str">"MySQL"</span>,
+                <span class="code-str">"MS Access"</span>],<br />
+                &nbsp;&nbsp;<span class="code-prop">activelyLearning</span>:
+                [<span class="code-str">"C# (.NET)"</span>,
+                <span class="code-str">"PHP &amp; Laravel"</span>,
+                <span class="code-str">"SQL Server (SSMS)"</span>],<br />
+                &nbsp;&nbsp;<span class="code-prop">openForOpportunities</span>:
+                <span class="code-keyword">true</span><br />
+                };<br /><br />
+                <span class="code-comment"
+                  >// Full-stack from frontend to backend &amp; hosting</span
+                ><br />
+                <span class="code-keyword">export default</span>
+                <span class="code-var">itDeveloper</span>;
+              </div>
+            </div>
+
+            <!-- Floating Badges -->
+            <div class="floating-tech-pill pill-1">
+              <i
+                class="fa-brands fa-react"
+                style="color: #61dafb; font-size: 1.1rem"
+              ></i>
+              <span>React.js &amp; Frontend</span>
+            </div>
+            <div class="floating-tech-pill pill-2">
+              <i
+                class="fa-brands fa-python"
+                style="color: #3776ab; font-size: 1.1rem"
+              ></i>
+              <span>Python &amp; Django</span>
+            </div>
+            <div class="floating-tech-pill pill-3">
+              <i
+                class="fa-solid fa-database"
+                style="color: #336791; font-size: 1.1rem"
+              ></i>
+              <span>PostgreSQL &amp; MySQL</span>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#home" class="nav-brand">
-            <span class="brand-logo-icon">&lt;/&gt;</span>
-            <span>Dev<span class="gradient-text">Portfolio</span></span>
-          </a>
-          <p style="margin-top: 0.5rem; font-size: 0.9rem;">Full-Stack IT &amp; Software Engineering Portfolio.</p>
+      <!-- About Section -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag"
+              ><i class="fa-solid fa-user-gear"></i> About Me</span
+            >
+            <h2 class="section-title">
+              End-to-End
+              <span class="gradient-text">Full-Stack</span> Engineering
+            </h2>
+            <p class="section-subtitle">
+              Bridging user interfaces, REST APIs, database schemas, and live
+              cloud deployments with a continuous learning mindset.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card-main reveal">
+              <h3>
+                Full-Stack Builder with Strong Problem-Solving Foundations
+              </h3>
+              <p>
+                I build complete, production-ready web applications from start
+                to finish. From architecting responsive frontends in
+                <strong>React.js, JavaScript, HTML5 &amp; CSS3</strong>, to
+                building backend APIs in <strong>Python &amp; Django</strong>,
+                designing relational databases in
+                <strong>PostgreSQL, MySQL, and MS Access</strong>, and managing
+                deployments on <strong>Vercel</strong>.
+              </p>
+              <p>
+                My engineering approach is grounded in solid
+                <strong>Data Structures &amp; Algorithms (DSA)</strong> and
+                <strong>C++</strong>, ensuring performant, clean, and
+                maintainable code. I am continuously expanding my capabilities
+                into
+                <strong
+                  >C# (.NET), PHP, Laravel, and Advanced SQL Server Management
+                  Studio (SSMS)</strong
+                >.
+              </p>
+              <div
+                style="
+                  margin-top: 1.5rem;
+                  display: flex;
+                  gap: 1rem;
+                  flex-wrap: wrap;
+                "
+              >
+                <a href="#projects" class="btn btn-primary btn-sm"
+                  ><i class="fa-solid fa-eye"></i> View Live Projects</a
+                >
+                <a href="#contact" class="btn btn-secondary btn-sm"
+                  ><i class="fa-solid fa-envelope"></i> Get In Touch</a
+                >
+              </div>
+            </div>
+
+            <div class="highlights-grid">
+              <div class="highlight-card reveal reveal-delay-1">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h4>Full-Stack &amp; Hosting</h4>
+                <p>
+                  End-to-end development covering UI, API communication,
+                  database connectivity, and live Vercel deployments.
+                </p>
+              </div>
+              <div class="highlight-card reveal reveal-delay-2">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <h4>Database Management (DBMS)</h4>
+                <p>
+                  Schema modeling, relationships, and queries across PostgreSQL,
+                  MySQL, MS Access, and SQL Server.
+                </p>
+              </div>
+              <div class="highlight-card reveal reveal-delay-1">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-brain"></i>
+                </div>
+                <h4>DSA &amp; C++ Foundation</h4>
+                <p>
+                  Strong algorithmic problem-solving with data structures,
+                  asymptotic complexity, and Object-Oriented C++.
+                </p>
+              </div>
+              <div class="highlight-card reveal reveal-delay-2">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+                <h4>Active Growth</h4>
+                <p>
+                  Expanding backend mastery with C# (.NET), PHP, Laravel MVC
+                  architecture, and SSMS in VS Code.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills & Languages Section -->
+      <section
+        class="section"
+        id="skills"
+        style="background: var(--bg-glass-card)"
+      >
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag"
+              ><i class="fa-solid fa-code-branch"></i> Technical Arsenal</span
+            >
+            <h2 class="section-title">
+              Languages &amp; <span class="gradient-text">Skills Learned</span>
+            </h2>
+            <p class="section-subtitle">
+              A clear breakdown of what I have learned, the databases and
+              frameworks I use, and the technologies I am currently mastering.
+            </p>
+          </div>
+
+          <!-- Filter Category Tabs -->
+          <div class="skills-filter-nav reveal">
+            <button class="filter-btn active" data-filter="all">
+              <i class="fa-solid fa-border-all"></i> All Skills
+            </button>
+            <button class="filter-btn" data-filter="languages">
+              <i class="fa-solid fa-code"></i> Languages
+            </button>
+            <button class="filter-btn" data-filter="frameworks">
+              <i class="fa-solid fa-cubes"></i> Frameworks &amp; Web
+            </button>
+            <button class="filter-btn" data-filter="databases">
+              <i class="fa-solid fa-database"></i> Databases &amp; DBMS
+            </button>
+            <button class="filter-btn" data-filter="tools">
+              <i class="fa-solid fa-wrench"></i> Core CS &amp; Tools
+            </button>
+          </div>
+
+          <!-- Dynamic Skills Grid -->
+          <div class="skills-grid" id="skills-grid">
+            <!-- Populated by js/skills.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag"
+              ><i class="fa-solid fa-folder-open"></i> Portfolio Work</span
+            >
+            <h2 class="section-title">
+              Featured
+              <span class="gradient-text">Projects &amp; Solutions</span>
+            </h2>
+            <p class="section-subtitle">
+              Real-world full-stack web platforms and systems. Click "Live Demo"
+              to visit the deployed sites or add new projects directly!
+            </p>
+          </div>
+
+          <!-- Filter & Search Controls -->
+          <div class="projects-controls reveal">
+            <!-- Category Filter Pills -->
+            <div
+              class="projects-filter-nav skills-filter-nav"
+              style="margin-bottom: 0"
+            >
+              <button class="filter-btn active" data-filter="all">
+                All Projects
+              </button>
+              <button class="filter-btn" data-filter="fullstack">
+                Full-Stack
+              </button>
+              <button class="filter-btn" data-filter="backend">
+                Backend &amp; Databases
+              </button>
+            </div>
+
+            <!-- Search Input -->
+            <div class="project-search-box">
+              <i class="fa-solid fa-magnifying-glass project-search-icon"></i>
+              <input
+                type="text"
+                id="project-search-input"
+                placeholder="Search by title, tech (e.g. React, Python, PostgreSQL)..."
+              />
+            </div>
+
+            <!-- Project Management Actions -->
+            <div class="project-actions-bar">
+              <button
+                class="btn btn-primary btn-sm"
+                onclick="openAddProjectModal()"
+                title="Add your project"
+              >
+                <i class="fa-solid fa-plus"></i> Add Project
+              </button>
+              <button
+                class="btn btn-secondary btn-sm"
+                onclick="exportProjectsJSON()"
+                title="Export projects backup as JSON"
+              >
+                <i class="fa-solid fa-download"></i> Export JSON
+              </button>
+              <label
+                class="btn btn-secondary btn-sm"
+                style="cursor: pointer"
+                title="Import projects from JSON file"
+              >
+                <i class="fa-solid fa-upload"></i> Import
+                <input
+                  type="file"
+                  id="import-json-input"
+                  accept=".json"
+                  style="display: none"
+                  onchange="importProjectsJSON(event)"
+                />
+              </label>
+              <button
+                class="btn btn-outline btn-sm"
+                onclick="resetProjectsToDefault()"
+                title="Reset to sample projects"
+              >
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Projects Grid Container -->
+          <div class="projects-grid" id="projects-grid">
+            <!-- Rendered via js/projects.js -->
+          </div>
+
+          <!-- Empty State Message -->
+          <div
+            class="projects-empty-state"
+            id="projects-empty-state"
+            style="display: none"
+          >
+            <div class="empty-icon">
+              <i class="fa-solid fa-folder-minus"></i>
+            </div>
+            <h3>No matching projects found</h3>
+            <p style="margin-bottom: 1.5rem">
+              Try adjusting your search query or category filters, or click
+              below to add a new project.
+            </p>
+            <button class="btn btn-primary" onclick="openAddProjectModal()">
+              <i class="fa-solid fa-plus"></i> Add New Project
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Learning & Experience Journey Timeline -->
+      <section
+        class="section"
+        id="timeline"
+        style="background: var(--bg-glass-card)"
+      >
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag"
+              ><i class="fa-solid fa-timeline"></i> Milestones</span
+            >
+            <h2 class="section-title">
+              My Learning &amp;
+              <span class="gradient-text">Skills Journey</span>
+            </h2>
+            <p class="section-subtitle">
+              How my technical skills have evolved from foundational computer
+              science into full-stack deployments and advanced database
+              engineering.
+            </p>
+          </div>
+
+          <div class="timeline-container">
+            <!-- Timeline Item 1: Active Learning -->
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-date">Current / Active Learning</div>
+                <h3 class="timeline-title">
+                  C#, PHP, Laravel &amp; Advanced SQL Server
+                </h3>
+                <div class="timeline-org">
+                  <i class="fa-solid fa-rocket"></i> Backend &amp; Advanced
+                  Database Engineering
+                </div>
+                <p class="timeline-body">
+                  Actively learning C# (.NET) object-oriented systems, PHP &amp;
+                  Laravel framework MVC development, and advanced database
+                  architecture with Microsoft SQL Server Management Studio
+                  (SSMS) in VS Code.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2: Full-Stack & Deployments -->
+            <div class="timeline-item reveal reveal-delay-1">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-date">
+                  Full-Stack Development &amp; Hosting
+                </div>
+                <h3 class="timeline-title">
+                  React.js, Python, Django &amp; Vercel Deployments
+                </h3>
+                <div class="timeline-org">
+                  <i class="fa-solid fa-laptop-code"></i> Live Production
+                  Applications
+                </div>
+                <p class="timeline-body">
+                  Built and independently launched end-to-end full-stack web
+                  platforms: the <strong>GravaStar E-Commerce store</strong> and
+                  the <strong>Odemine Car Rental system</strong>. Implemented
+                  interactive frontend interfaces in React.js, backend APIs,
+                  relational databases (PostgreSQL &amp; MySQL), and cloud
+                  hosting on Vercel.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3: Databases & DBMS -->
+            <div class="timeline-item reveal reveal-delay-2">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-date">
+                  Database Architecture &amp; DBMS
+                </div>
+                <h3 class="timeline-title">
+                  PostgreSQL, MySQL &amp; DBMS with MS Access
+                </h3>
+                <div class="timeline-org">
+                  <i class="fa-solid fa-database"></i> Relational Data Systems
+                </div>
+                <p class="timeline-body">
+                  Mastered relational database schema design, normalization,
+                  foreign keys, complex queries, joins, and data management
+                  using PostgreSQL, MySQL, and Microsoft Access DBMS.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 4: CS Foundations -->
+            <div class="timeline-item reveal reveal-delay-3">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <div class="timeline-date">Core Foundations</div>
+                <h3 class="timeline-title">
+                  Data Structures &amp; Algorithms (DSA) &amp; C++
+                </h3>
+                <div class="timeline-org">
+                  <i class="fa-solid fa-code"></i> Computer Science &amp;
+                  Programming Fundamentals
+                </div>
+                <p class="timeline-body">
+                  Formed strong core foundations in computer programming,
+                  Object-Oriented C++, Python, Data Structures &amp; Algorithms
+                  (DSA), time/space complexity analysis, and modern web
+                  fundamentals (HTML5, CSS3, JavaScript).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-tag"
+              ><i class="fa-solid fa-headset"></i> Get In Touch</span
+            >
+            <h2 class="section-title">
+              Let's Build Something
+              <span class="gradient-text">Extraordinary</span>
+            </h2>
+            <p class="section-subtitle">
+              Looking for a full-stack developer or have a project to
+              collaborate on? Send me a message below!
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Direct Contact Details -->
+            <div class="contact-info-card reveal">
+              <h3>Let's Connect</h3>
+              <p>
+                I am open to software development opportunities, freelance
+                collaborations, and tech discussions. Feel free to reach out
+                directly via email or check out my live deployments!
+              </p>
+
+              <div class="contact-methods-list">
+                <div class="contact-method-item">
+                  <div class="contact-method-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="contact-method-details">
+                    <h4>Email</h4>
+                    <a href="mailto:Khengoudom99@gmail.com"
+                      >Khengoudom99@gmail.com</a
+                    >
+                  </div>
+                </div>
+
+                <div class="contact-method-item">
+                  <div class="contact-method-icon">
+                    <i class="fa-solid fa-globe"></i>
+                  </div>
+                  <div class="contact-method-details">
+                    <h4>Live Deployments</h4>
+                    <a
+                      href="https://gravastar-frontend-nine.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >GravaStar &amp; Odemine on Vercel</a
+                    >
+                  </div>
+                </div>
+
+                <div class="contact-method-item">
+                  <div class="contact-method-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div class="contact-method-details">
+                    <h4>GitHub</h4>
+                    <a
+                      href="https://github.com/Dominant8899"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >github.com/Dominant8899</a
+                    >
+                  </div>
+                </div>
+
+                <div class="contact-method-item">
+                  <div class="contact-method-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div class="contact-method-details">
+                    <h4>Phone</h4>
+                    <a href="tel:077447899">077447899</a>
+                  </div>
+                </div>
+
+                <div class="contact-method-item">
+                  <div class="contact-method-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div class="contact-method-details">
+                    <h4>Location &amp; Timezone</h4>
+                    <span>Available remotely · UTC+7</span>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="assets/Kheng-Oudom-Resume.pdf"
+                class="btn btn-outline"
+                download
+              >
+                <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+              </a>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-card reveal reveal-delay-1">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem">
+                Send a Message
+              </h3>
+              <form
+                id="contact-form"
+                action="https://formsubmit.co/Khengoudom99@gmail.com"
+                method="POST"
+              >
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New portfolio contact message"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://dominant8899.github.io/IT-portfolio/"
+                />
+                <div class="form-group">
+                  <label for="contact-name">Your Full Name *</label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    class="form-control"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email">Your Email Address *</label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    class="form-control"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject">Subject</label>
+                  <input
+                    type="text"
+                    id="contact-subject"
+                    name="subject"
+                    class="form-control"
+                    placeholder="Full-Stack Project / Opportunity"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message">Message *</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    class="form-control"
+                    placeholder="Tell me about your project, idea, or role..."
+                    required
+                  ></textarea>
+                </div>
+
+                <p
+                  class="form-status"
+                  id="contact-form-status"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="width: 100%"
+                >
+                  <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#home" class="nav-brand">
+              <span class="brand-logo-icon">&lt;/&gt;</span>
+              <span>Dev<span class="gradient-text">Portfolio</span></span>
+            </a>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem">
+              Full-Stack IT &amp; Software Engineering Portfolio.
+            </p>
+            <a
+              href="assets/Kheng-Oudom-Resume.pdf"
+              class="footer-resume-link"
+              download
+              ><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a
+            >
+          </div>
+
+          <div class="footer-socials">
+            <a
+              href="https://github.com/Dominant8899"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+              title="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/kheng-oudom-ek-6b63ba433/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-btn"
+              title="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a
+              href="mailto:Khengoudom99@gmail.com"
+              class="social-btn"
+              title="Email"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </div>
         </div>
 
-        <div class="footer-socials">
-          <a href="https://github.com/Dominant8899" target="_blank" rel="noopener noreferrer" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/kheng-oudom-ek-6b63ba433/" target="_blank" rel="noopener noreferrer" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:Khengoudom99@gmail.com" class="social-btn" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year">2026</span> IT Portfolio. Built with
+            HTML5, Vanilla CSS3 &amp; Modern JavaScript.
+          </p>
         </div>
       </div>
+    </footer>
 
-      <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2026</span> IT Portfolio. Built with HTML5, Vanilla CSS3 &amp; Modern JavaScript.</p>
-      </div>
-    </div>
-  </footer>
+    <!-- ================= MODALS ================= -->
 
-  <!-- ================= MODALS ================= -->
-
-  <!-- 1. Project Detail Modal -->
-  <div class="modal-backdrop" id="project-detail-modal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3 class="modal-title" id="project-detail-title">Project Details</h3>
-        <button class="modal-close-btn" onclick="closeModal('project-detail-modal')">&times;</button>
-      </div>
-      <div class="modal-body" id="project-detail-body">
-        <!-- Injected via JavaScript -->
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" onclick="closeModal('project-detail-modal')">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2. Add / Edit Project Modal -->
-  <div class="modal-backdrop" id="project-form-modal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3 class="modal-title" id="project-form-modal-title">Add New Project</h3>
-        <button class="modal-close-btn" onclick="closeModal('project-form-modal')">&times;</button>
-      </div>
-      <form id="project-form">
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="form-project-title">Project Title *</label>
-            <input type="text" id="form-project-title" class="form-control" placeholder="e.g. My Full-Stack Web App" required>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div class="form-group">
-              <label for="form-project-category">Category *</label>
-              <select id="form-project-category" class="form-control">
-                <option value="fullstack">Full-Stack</option>
-                <option value="frontend">Frontend</option>
-                <option value="backend">Backend &amp; APIs</option>
-                <option value="cloud">Cloud &amp; Hosting</option>
-                <option value="mobile">Mobile App</option>
-                <option value="ai">AI &amp; Data</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="form-project-status">Project Status</label>
-              <select id="form-project-status" class="form-control">
-                <option value="Featured">Featured</option>
-                <option value="Completed" selected>Completed</option>
-                <option value="In Progress">In Progress</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="form-project-summary">Short Summary (1-2 sentences) *</label>
-            <input type="text" id="form-project-summary" class="form-control" placeholder="Brief summary displayed on project card" required>
-          </div>
-
-          <div class="form-group">
-            <label for="form-project-desc">Full Project Description</label>
-            <textarea id="form-project-desc" class="form-control" placeholder="Detailed breakdown of architecture, features, problem solved..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="form-project-tags">Languages &amp; Technologies (comma separated) *</label>
-            <input type="text" id="form-project-tags" class="form-control" placeholder="e.g. React.js, Python, Django, PostgreSQL, Vercel" required>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div class="form-group">
-              <label for="form-project-demo">Live Demo URL</label>
-              <input type="url" id="form-project-demo" class="form-control" placeholder="https://my-app.vercel.app">
-            </div>
-
-            <div class="form-group">
-              <label for="form-project-github">GitHub Repo URL</label>
-              <input type="url" id="form-project-github" class="form-control" placeholder="https://github.com/username/repo">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="form-project-image">Thumbnail Image URL</label>
-            <input type="url" id="form-project-image" class="form-control" placeholder="https://..." value="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80">
-            
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem;">Or select from developer presets:</p>
-            <div class="image-presets-row">
-              <div class="preset-thumb selected" onclick="selectPresetImage('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80', this)">
-                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=300&q=80" alt="Gaming Setup Theme">
-              </div>
-              <div class="preset-thumb" onclick="selectPresetImage('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80', this)">
-                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=300&q=80" alt="Car Theme">
-              </div>
-              <div class="preset-thumb" onclick="selectPresetImage('https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80', this)">
-                <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=300&q=80" alt="Database Theme">
-              </div>
-              <div class="preset-thumb" onclick="selectPresetImage('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80', this)">
-                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&q=80" alt="Algorithms Theme">
-              </div>
-            </div>
-          </div>
+    <!-- 1. Project Detail Modal -->
+    <div class="modal-backdrop" id="project-detail-modal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 class="modal-title" id="project-detail-title">Project Details</h3>
+          <button
+            class="modal-close-btn"
+            onclick="closeModal('project-detail-modal')"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body" id="project-detail-body">
+          <!-- Injected via JavaScript -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" onclick="closeModal('project-form-modal')">Cancel</button>
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Save Project</button>
+          <button
+            class="btn btn-secondary"
+            onclick="closeModal('project-detail-modal')"
+          >
+            Close
+          </button>
         </div>
-      </form>
+      </div>
     </div>
-  </div>
 
-  <!-- Toast Notification Container -->
-  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+    <!-- 2. Add / Edit Project Modal -->
+    <div class="modal-backdrop" id="project-form-modal">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 class="modal-title" id="project-form-modal-title">
+            Add New Project
+          </h3>
+          <button
+            class="modal-close-btn"
+            onclick="closeModal('project-form-modal')"
+          >
+            &times;
+          </button>
+        </div>
+        <form id="project-form">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="form-project-title">Project Title *</label>
+              <input
+                type="text"
+                id="form-project-title"
+                class="form-control"
+                placeholder="e.g. My Full-Stack Web App"
+                required
+              />
+            </div>
 
-  <!-- JavaScript Scripts -->
-  <script src="js/theme.js"></script>
-  <script src="js/skills.js"></script>
-  <script src="js/projects.js"></script>
-  <script src="js/main.js"></script>
-</body>
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
+            >
+              <div class="form-group">
+                <label for="form-project-category">Category *</label>
+                <select id="form-project-category" class="form-control">
+                  <option value="fullstack">Full-Stack</option>
+                  <option value="frontend">Frontend</option>
+                  <option value="backend">Backend &amp; APIs</option>
+                  <option value="cloud">Cloud &amp; Hosting</option>
+                  <option value="mobile">Mobile App</option>
+                  <option value="ai">AI &amp; Data</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="form-project-status">Project Status</label>
+                <select id="form-project-status" class="form-control">
+                  <option value="Featured">Featured</option>
+                  <option value="Completed" selected>Completed</option>
+                  <option value="In Progress">In Progress</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-project-summary"
+                >Short Summary (1-2 sentences) *</label
+              >
+              <input
+                type="text"
+                id="form-project-summary"
+                class="form-control"
+                placeholder="Brief summary displayed on project card"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="form-project-desc">Full Project Description</label>
+              <textarea
+                id="form-project-desc"
+                class="form-control"
+                placeholder="Detailed breakdown of architecture, features, problem solved..."
+              ></textarea>
+            </div>
+
+            <div class="case-study-form-grid">
+              <div class="form-group">
+                <label for="form-project-problem">Problem</label>
+                <textarea
+                  id="form-project-problem"
+                  class="form-control"
+                  placeholder="What problem did this project solve?"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="form-project-role">Your Role</label>
+                <textarea
+                  id="form-project-role"
+                  class="form-control"
+                  placeholder="What did you own or build?"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="form-project-challenges">Challenges</label>
+                <textarea
+                  id="form-project-challenges"
+                  class="form-control"
+                  placeholder="What was technically difficult?"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="form-project-outcome">Outcome</label>
+                <textarea
+                  id="form-project-outcome"
+                  class="form-control"
+                  placeholder="What was delivered or learned?"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-project-tags"
+                >Languages &amp; Technologies (comma separated) *</label
+              >
+              <input
+                type="text"
+                id="form-project-tags"
+                class="form-control"
+                placeholder="e.g. React.js, Python, Django, PostgreSQL, Vercel"
+                required
+              />
+            </div>
+
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
+            >
+              <div class="form-group">
+                <label for="form-project-demo">Live Demo URL</label>
+                <input
+                  type="url"
+                  id="form-project-demo"
+                  class="form-control"
+                  placeholder="https://my-app.vercel.app"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="form-project-github">GitHub Repo URL</label>
+                <input
+                  type="url"
+                  id="form-project-github"
+                  class="form-control"
+                  placeholder="https://github.com/username/repo"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-project-image">Thumbnail Image URL</label>
+              <input
+                type="url"
+                id="form-project-image"
+                class="form-control"
+                placeholder="https://..."
+                value="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+              />
+
+              <p
+                style="
+                  font-size: 0.8rem;
+                  color: var(--text-muted);
+                  margin-top: 0.4rem;
+                "
+              >
+                Or select from developer presets:
+              </p>
+              <div class="image-presets-row">
+                <div
+                  class="preset-thumb selected"
+                  onclick="
+                    selectPresetImage(
+                      'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80',
+                      this,
+                    )
+                  "
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=300&q=80"
+                    alt="Gaming Setup Theme"
+                  />
+                </div>
+                <div
+                  class="preset-thumb"
+                  onclick="
+                    selectPresetImage(
+                      'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
+                      this,
+                    )
+                  "
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=300&q=80"
+                    alt="Car Theme"
+                  />
+                </div>
+                <div
+                  class="preset-thumb"
+                  onclick="
+                    selectPresetImage(
+                      'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80',
+                      this,
+                    )
+                  "
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=300&q=80"
+                    alt="Database Theme"
+                  />
+                </div>
+                <div
+                  class="preset-thumb"
+                  onclick="
+                    selectPresetImage(
+                      'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+                      this,
+                    )
+                  "
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&q=80"
+                    alt="Algorithms Theme"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="closeModal('project-form-modal')"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-floppy-disk"></i> Save Project
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+    <!-- JavaScript Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

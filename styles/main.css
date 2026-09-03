@@ -32,10 +32,23 @@
   --accent-warning: #f59e0b; /* Amber */
   --accent-danger: #ef4444; /* Rose */
 
-  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #06b6d4 100%);
+  --gradient-primary: linear-gradient(
+    135deg,
+    #6366f1 0%,
+    #a855f7 50%,
+    #06b6d4 100%
+  );
   --gradient-accent: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
-  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  --gradient-card: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  --gradient-glow: radial-gradient(
+    circle at 50% 0%,
+    rgba(99, 102, 241, 0.15) 0%,
+    transparent 70%
+  );
 
   /* Shadows & Glows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -45,8 +58,8 @@
   --shadow-glow-cyan: 0 0 25px rgba(6, 182, 212, 0.25);
 
   /* Typography */
-  --font-main: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-main: "Outfit", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-code: "JetBrains Mono", "Fira Code", monospace;
 
   /* Layout & Sizing */
   --container-max-width: 1200px;
@@ -89,10 +102,23 @@
   --accent-warning: #d97706;
   --accent-danger: #dc2626;
 
-  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0891b2 100%);
+  --gradient-primary: linear-gradient(
+    135deg,
+    #4f46e5 0%,
+    #7c3aed 50%,
+    #0891b2 100%
+  );
   --gradient-accent: linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
-  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
-  --gradient-glow: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  --gradient-card: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(248, 250, 252, 0.9) 100%
+  );
+  --gradient-glow: radial-gradient(
+    circle at 50% 0%,
+    rgba(99, 102, 241, 0.08) 0%,
+    transparent 70%
+  );
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
@@ -102,7 +128,9 @@
 }
 
 /* --- Global Reset & Base Styles --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -122,7 +150,9 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  transition:
+    background-color var(--transition-normal),
+    color var(--transition-normal);
 }
 
 /* Background Animated Gradient Mesh */
@@ -175,7 +205,12 @@ body {
 }
 
 /* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-heading);
   font-weight: 700;
   line-height: 1.25;
@@ -192,7 +227,8 @@ a {
   transition: color var(--transition-fast);
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--font-code);
 }
 
@@ -261,7 +297,10 @@ code, pre {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-color);
-  transition: background var(--transition-normal), border-color var(--transition-normal), transform var(--transition-normal);
+  transition:
+    background var(--transition-normal),
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
 }
 
 .navbar .container {
@@ -309,12 +348,13 @@ code, pre {
   padding: 0.5rem 0;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--text-heading);
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -325,7 +365,8 @@ code, pre {
   transition: width var(--transition-normal);
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
@@ -573,9 +614,15 @@ code, pre {
   border-radius: 50%;
 }
 
-.dot-red { background: #ef4444; }
-.dot-yellow { background: #f59e0b; }
-.dot-green { background: #10b981; }
+.dot-red {
+  background: #ef4444;
+}
+.dot-yellow {
+  background: #f59e0b;
+}
+.dot-green {
+  background: #10b981;
+}
 
 .window-title {
   font-size: 0.8rem;
@@ -590,12 +637,25 @@ code, pre {
   line-height: 1.7;
 }
 
-.code-keyword { color: #f43f5e; }
-.code-var { color: #38bdf8; }
-.code-prop { color: #a78bfa; }
-.code-str { color: #34d399; }
-.code-num { color: #fbbf24; }
-.code-comment { color: var(--text-muted); font-style: italic; }
+.code-keyword {
+  color: #f43f5e;
+}
+.code-var {
+  color: #38bdf8;
+}
+.code-prop {
+  color: #a78bfa;
+}
+.code-str {
+  color: #34d399;
+}
+.code-num {
+  color: #fbbf24;
+}
+.code-comment {
+  color: var(--text-muted);
+  font-style: italic;
+}
 
 .floating-tech-pill {
   position: absolute;
@@ -613,9 +673,21 @@ code, pre {
   animation: floatItem 4s ease-in-out infinite alternate;
 }
 
-.pill-1 { top: -20px; right: 20px; animation-delay: 0s; }
-.pill-2 { bottom: -20px; left: 10px; animation-delay: 1.5s; }
-.pill-3 { top: 40%; left: -30px; animation-delay: 2.5s; }
+.pill-1 {
+  top: -20px;
+  right: 20px;
+  animation-delay: 0s;
+}
+.pill-2 {
+  bottom: -20px;
+  left: 10px;
+  animation-delay: 1.5s;
+}
+.pill-3 {
+  top: 40%;
+  left: -30px;
+  animation-delay: 2.5s;
+}
 
 /* --- About Section --- */
 .about-grid {
@@ -864,7 +936,9 @@ code, pre {
   font-family: inherit;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .project-search-box input:focus {
@@ -1051,7 +1125,7 @@ code, pre {
 }
 
 .timeline-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1207,10 +1281,20 @@ code, pre {
   text-transform: uppercase;
 }
 
-.contact-method-details a, .contact-method-details span {
+.contact-method-details a,
+.contact-method-details span {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-heading);
+}
+
+.contact-method-placeholder {
+  border-style: dashed;
+}
+
+.contact-method-placeholder .contact-method-details span {
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 .contact-form-card {
@@ -1243,7 +1327,9 @@ code, pre {
   font-family: inherit;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .form-control:focus {
@@ -1254,6 +1340,62 @@ code, pre {
 textarea.form-control {
   resize: vertical;
   min-height: 130px;
+}
+
+.form-status {
+  min-height: 1.5rem;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form-status.is-sending {
+  color: var(--accent-secondary);
+}
+.form-status.is-success {
+  color: var(--accent-success);
+}
+.form-status.is-error {
+  color: var(--accent-danger);
+}
+
+.case-study-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1rem;
+}
+
+.case-study-form-grid textarea.form-control {
+  min-height: 92px;
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.case-study-item {
+  padding: 1rem;
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.case-study-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-study-item p {
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 /* --- Modals --- */
@@ -1361,7 +1503,8 @@ textarea.form-control {
   object-fit: cover;
 }
 
-.preset-thumb:hover, .preset-thumb.selected {
+.preset-thumb:hover,
+.preset-thumb.selected {
   border-color: var(--accent-primary);
   transform: scale(1.04);
 }
@@ -1425,6 +1568,19 @@ textarea.form-control {
 .footer-brand h4 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+}
+
+.footer-resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  color: var(--accent-secondary);
+  font-weight: 600;
+}
+
+.footer-resume-link:hover {
+  color: var(--text-heading);
 }
 
 .footer-socials {
@@ -1576,5 +1732,14 @@ textarea.form-control {
 
   .image-presets-row {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case-study-grid,
+  .case-study-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
   }
 }
